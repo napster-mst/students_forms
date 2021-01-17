@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% load static %}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'students/view.css' %}" media="all">
+    <script type="text/javascript" src="{% static 'students/view.js' %}"></script>
+
+</head>
+<body id="main_body">
+
+<img id="top" src="{% static 'students/top.png' %}" alt="">
+<div id="form_container">
+
+    <h1><a>Student Registration Form</a></h1>
+    <form class="appnitro" method="post" action="">
+        {% csrf_token %}
+        <div class="form_description">
+            <h2>Student Registration Form</h2>
+        </div>
+        <ul>
+
+            <li id="li_1">
+                <label class="description">First Name: </label>
+                <div>
+                    {{form.first_name}}
+                </div>
+            </li>
+            <li id="li_2">
+                <label class="description">Last Name: </label>
+                <div>
+                    {{form.last_name}}
+                </div>
+            </li>
+            <li id="li_3">
+                <label class="description">Gender: </label>
+                <div>
+                    {{form.gender}}
+                </div>
+            </li>
+            <li id="li_4">
+                <label class="description">Department: </label>
+                <div>
+                    {{form.department}}
+                </div>
+            </li>
+            <li id="li_5">
+                <label class="description">Mobile: </label>
+                <div>
+                    {{form.mobile}}
+                </div>
+            </li>
+            <li id="li_6">
+                <label class="description">Email: </label>
+                <div>
+                    {{form.email}}
+                </div>
+            </li>
+            <li id="li_7">
+                <label class="description">City: </label>
+                <div>
+                    {{form.city}}
+                </div>
+            </li>
+            <li id="li_8">
+                <label class="description">State </label>
+                <div>
+                    {{form.state}}
+                </div>
+            </li>
+
+            <li class="buttons">
+                <input type="hidden" name="form_id" value="12717"/>
+
+                <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit"/>
+            </li>
+        </ul>
+    </form>
+</div>
+<img id="bottom" src="{% static 'students/bottom.png' %}" alt="">
+</body>
+</html>
